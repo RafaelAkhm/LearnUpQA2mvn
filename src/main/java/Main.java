@@ -19,5 +19,10 @@ public class Main {
         int[] actual3 = Statistic.massStayPlayers(speedOfPlayers);
 
         System.out.println("3.Массив скоростей оставшихся в игре игроков " + "ОР: " + expected3 + ";" + " ФР: " + actual3 + ";");
+
+        int[] expected4 = {4};
+        int[] actual4 = Statistic.MAX_SPEED(speedOfPlayers);
+
+        System.out.println("4.Массив скоростей игроков выбывшие по превышению максимальной скорости " + "ОР: " + expected4 + ";" + " ФР: " + actual4 + ";");
     }
 }

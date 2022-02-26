@@ -36,4 +36,13 @@ public class Statistic {
         }
         return massStayPlayers;
     }
+
+    static int[] MAX_SPEED(int[] speedOfPlayers) {
+        boolean isRedLight = false;
+        int max = 3;
+        for (int i = 0; i < speedOfPlayers.length; i++) {
+            if (speedOfPlayers[i] > max) ;
+        }
+        return speedOfPlayers;
+    }
 }
