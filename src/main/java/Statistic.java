@@ -46,11 +46,16 @@ public class Statistic {
     }
    
 
-    static int[] MAX_SPEED(int[] speedOfPlayers) {
-        int max = 3;
-        for (int i = 0; i < speedOfPlayers.length; i++) {
-            if (Color.isReedLight && speedOfPlayers[i] > max) ;
+    static int[] MAX_SPEED(int[] speedOfPlayer) {
+        int cnt = 2;
+        int[] result = new int[cnt];
+        int resultCount = 0;
+        for (int i = 0; i != speedOfPlayer.length; ++i) {
+            if (isPlayerDroppedOut && speedOfPlayer <= cnt){
+                result[resultCount] = speedOfPlayer[i];
+                ++resultCount;
+            }
         }
-        return speedOfPlayers;
+        return result;
     }
 }
