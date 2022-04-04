@@ -30,7 +30,7 @@ public class StaticTest {
 
     public void MAX_SPEED() {
         int[] speedOfPlayer = {0, 3, 2};
-        int[] expected = {2};
+        int[] expected = {0, 2};
         int[] actual = Statistic.MAX_SPEED(speedOfPlayer);}
     }
 
