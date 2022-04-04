@@ -1,28 +1,19 @@
 
 public class Main {
-
     public static void main(String[] args) {
-        System.out.println("Start game!");
-        int[] speedOfPlayers = {3, 0, 0, 4, 1};
-
-        int expected = 3;
-        int actual = Statistic.speedPlOut(speedOfPlayers);
-        System.out.println("1.Количество выбывающих " + "ОР: " + expected + "; ФР: " + actual);
-
-        int[] expected2 = {3, 4, 1};
-        int[] actual2 = Statistic.massOutPlayers(speedOfPlayers);
-
-        System.out.println("2.Массив скоростей выбывших игроков " + "ОР: " + expected2 + ";" + " ФР: " + actual2 + ";");
-
-
-        int[] expected3 = {0, 0};
-        int[] actual3 = Statistic.massStayPlayers(speedOfPlayers);
-
-        System.out.println("3.Массив скоростей оставшихся в игре игроков " + "ОР: " + expected3 + ";" + " ФР: " + actual3 + ";");
-
-        int[] expected4 = {4};
-        int[] actual4 = Statistic.MAX_SPEED(speedOfPlayers);
-
-        System.out.println("4.Массив скоростей игроков выбывшие по превышению максимальной скорости " + "ОР: " + expected4 + ";" + " ФР: " + actual4 + ";");
+        Statistic.isGreenLight = false;
+        int[] speedOfPlayer = new int[3];
+        speedOfPlayer[0] = 0;
+        speedOfPlayer[1] = 3;
+        speedOfPlayer[2] = 2;
+        int numberOfDropouts = Statistic.numberOfDropouts(speedOfPlayer);
+        System.out.println("Количество выбывших игроков " + numberOfDropouts);
+        int[] speedsOfDropped = Statistic.speedsOfDropped(speedOfPlayer);
+        System.out.println("Скорость выбывающих " + Arrays.toString(speedsOfDropped));
+        int[] speedsOfNotDropped = Statistic.speedsOfNotDropped(speedOfPlayer);
+        System.out.println("Скорость не выбывающих " + Arrays.toString(speedsOfNotDropped));
+        int[] speedsOfNotDropped = Statistic.MAX_SPEED(speedOfPlayer);
+        System.out.println("Скорости игроков выбывшие по превышению максимальной скорости " + Arrays.toString(MAX_SPEED));
     }
 }
+       
