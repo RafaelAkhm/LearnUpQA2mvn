@@ -51,7 +51,7 @@ public class Statistic {
         int[] result = new int[cnt];
         int resultCount = 0;
         for (int i = 0; i != speedOfPlayer.length; ++i) {
-            if (isPlayerDroppedOut && speedOfPlayer <= cnt){
+            if (isPlayerDroppedOut && speedOfPlayer > cnt){
                 result[resultCount] = speedOfPlayer[i];
                 ++resultCount;
             }
