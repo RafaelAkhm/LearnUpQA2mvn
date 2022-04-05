@@ -33,4 +33,3 @@ public class StaticTest {
         int[] expected = {3};
         int[] actual = Statistic.MAX_SPEED(speedOfPlayer);}
 }
-
