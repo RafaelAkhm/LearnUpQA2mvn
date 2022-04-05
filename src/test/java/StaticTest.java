@@ -8,7 +8,7 @@ public class StaticTest {
     public void NumbersOutPlayers() {
         int[] speedOfPlayer = {0, 3, 2 };
 
-        int expected = 3;
+        int expected = 2;
         int actual = Statistic.numberOfDropouts(speedOfPlayer);
         Assertions.assertEquals(expected, actual);
     }
@@ -32,5 +32,4 @@ public class StaticTest {
         int[] speedOfPlayer = {0, 3, 2};
         int[] expected = {3};
         int[] actual = Statistic.MAX_SPEED(speedOfPlayer);}
-    }
-
+}
