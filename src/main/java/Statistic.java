@@ -1,4 +1,5 @@
 public class Statistic {
+
     public static boolean isGreenLight = false;
     public static int numberOfDropouts(int[] speedOfPlayer) {
         int countOfPlayers = 0;
@@ -44,18 +45,18 @@ public class Statistic {
         }
         return result;
     }
-   
-
     static int[] MAX_SPEED(int[] speedOfPlayer) {
-        int cnt = 2;
-        int[] result = new int[cnt];
+        int cnt = 0;
+        int[] result = new int[1];
         int resultCount = 0;
-        for (int i = 0; i != speedOfPlayer.length; ++i) {
-            if (isPlayerDroppedOut && speedOfPlayer > cnt){
+        for (int i = 0; i < speedOfPlayer.length; ++i) {
+            if (speedOfPlayer[i] > 2) {
                 result[resultCount] = speedOfPlayer[i];
-                ++resultCount;
+              ++resultCount;
             }
         }
         return result;
+
     }
+
 }
