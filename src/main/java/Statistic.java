@@ -1,48 +1,66 @@
 public class Statistic {
-    static int speedPlOut(int[] speedOfPlayers) {
 
-
-        boolean isRedLight = false;
-        int speedPlOut = 0;
-        if (isRedLight = true) {
-            for (int e : speedOfPlayers) {
-                if (e > 0) speedPlOut++;
-            }
-
-        }
-        return speedPlOut;
-
-
-    }
-
-    static int[] massOutPlayers(int[] speedOfPlayers) {
-        boolean isRedLight = false;
-        int[] massOutPlayers = {3, 4, 1};
-        for (int i = 0; i < massOutPlayers.length; i++) {
-            if (isRedLight == false && massOutPlayers[i] > 0) {
-                massOutPlayers = massOutPlayers;
+    public static boolean isGreenLight = false;
+    public static int numberOfDropouts(int[] speedOfPlayer) {
+        int countOfPlayers = 0;
+        for (int i = 0; i != speedOfPlayer.length; ++i) {
+            if (isPlayerDroppedOut(speedOfPlayer[i])) {
+                ++countOfPlayers;
             }
         }
-        return massOutPlayers;
+        return countOfPlayers;
     }
-
-    static int[] massStayPlayers(int[] speedOfPlayers) {
-        boolean isRedLight = false;
-        int[] massStayPlayers = new int[2];
-        for (int i = 0; i < massStayPlayers.length; i++) {
-            if (isRedLight == false && massStayPlayers[i] == 0) {
-                massStayPlayers = massStayPlayers;
+    public static boolean isPlayerDroppedOut(int speedOfPlayer) {
+        if (isGreenLight == false) {
+            if (speedOfPlayer != 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+    public static int[] speedsOfDropped(int[] speedOfPlayer) {
+        int cnt = numberOfDropouts(speedOfPlayer);
+        int[] result = new int[cnt];
+        int resultCount = 0;
+        for (int i = 0; i != speedOfPlayer.length; ++i) {
+            if (isPlayerDroppedOut(speedOfPlayer[i])) {
+                result[resultCount] = speedOfPlayer[i];
+                ++resultCount;
             }
         }
-        return massStayPlayers;
+        return result;
+    }
+    public static int[] speedsOfNotDropped(int[] speedOfPlayer) {
+        int cnt = speedOfPlayer.length - numberOfDropouts(speedOfPlayer);
+        int[] result = new int[cnt];
+        int resultCount = 0;
+        for (int i = 0; i != speedOfPlayer.length; ++i) {
+            if (isPlayerDroppedOut(speedOfPlayer[i]) == false) {
+                result[resultCount] = speedOfPlayer[i];
+                ++resultCount;
+            }
+        }
+        return result;
+    }
+    static int[] MAX_SPEED(int[] speedOfPlayer) {
+        int cnt = 0;
+        int[] result = new int[1];
+        int resultCount = 0;
+        for (int i = 0; i < speedOfPlayer.length; ++i) {
+            if (speedOfPlayer[i] > 2) {
+                result[resultCount] = speedOfPlayer[i];
+              ++resultCount;
+            }
+        }
+        return result;
+
     }
 
-    static int[] MAX_SPEED(int[] speedOfPlayers) {
-        boolean isRedLight = false;
-        int max = 3;
-        for (int i = 0; i < speedOfPlayers.length; i++) {
-            if (speedOfPlayers[i] > max) ;
-        }
-        return speedOfPlayers;
-    }
 }
+
+
+
+
